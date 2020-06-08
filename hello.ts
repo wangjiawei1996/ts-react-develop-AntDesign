@@ -15,3 +15,8 @@ notSure = "123";
 
 let numberorString: number | string = 123;
 numberorString = "23";
+
+let arrofNumber: number[] = [1, 2, 3, 4];
+arrofNumber.push(5);
+
+let user: [string, number] = ["123", 2];
