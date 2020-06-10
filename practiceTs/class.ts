@@ -17,3 +17,4 @@ class Cat extends Animal {
     return "meol," + super.run();
   }
 }
+const cat = new Cat("maomao");
