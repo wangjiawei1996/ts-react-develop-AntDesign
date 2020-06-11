@@ -5,7 +5,7 @@ const LikeButtn: React.FC = () => {
   const [on, setOn] = useState(true);
   useEffect(() => {
     document.title = `点击了${like}次`;
-  });
+  }, [like, on]);
   return (
     <div>
       <button
