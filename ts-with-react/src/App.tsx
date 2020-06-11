@@ -2,6 +2,7 @@ import React from "react";
 import Hello from "./components/hello";
 import logo from "./logo.svg";
 import LikeButton from "./components/LikeButton";
+import MouseTracker from "./components/MouseTracker";
 import "./App.css";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <LikeButton />
+        <MouseTracker />
         <a
           className="App-link"
           href="https://reactjs.org"
