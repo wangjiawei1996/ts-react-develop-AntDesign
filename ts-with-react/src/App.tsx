@@ -41,7 +41,7 @@ const App: React.FC = () => {
           X:{positions.x}, Y: {positions.y}
         </p>
         {show && <MouseTracker />}
-
+        <LikeButton />
         <a
           className="App-link"
           href="https://reactjs.org"
