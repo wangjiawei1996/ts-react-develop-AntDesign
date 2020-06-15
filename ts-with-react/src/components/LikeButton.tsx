@@ -7,11 +7,13 @@ const LikeButtn: React.FC = () => {
   useEffect(() => {
     document.title = `点击了${like}次`;
   }, [like, on]);
+  function handleAlertClick() {
+    setTimeout(() => {
+      alert("you click on" + like);
+    }, 3000);
+  }
   return (
     <div>
-      <h2>
-        X:{positions.x}, Y: {positions.y}
-      </h2>
       <button
         onClick={() => {
           setLike(like + 1);
@@ -19,13 +21,7 @@ const LikeButtn: React.FC = () => {
       >
         {like}👍
       </button>
-      <button
-        onClick={() => {
-          setOn(!on);
-        }}
-      >
-        {on ? "ON" : "OFF"}
-      </button>
+      <button onClick={handleAlertClick}></button>
     </div>
   );
 };
