@@ -5,9 +5,19 @@ import LikeButton from "./components/LikeButton";
 import MouseTracker from "./components/MouseTracker";
 import useMouseTracker from "./hooks/useMouseTracker";
 import "./App.css";
+import useURLLoader from "./hooks/useURLLoader";
 
+interface IShowResult {
+  message: string;
+  status: string;
+}
 const App: React.FC = () => {
   const [show, setshow] = useState(true);
+  const [
+    data,
+    loading,
+  ] = useURLLoader("https://dog.ceo/api/breeds/image/random", [show]);
+  const dogResult = data as IShowResult;
   const positions = useMouseTracker();
   return (
     <div className="App">
@@ -22,6 +32,11 @@ const App: React.FC = () => {
             Tracker
           </button>
         </p>
+        {loading ? (
+          <p>狗狗读取中</p>
+        ) : (
+          <img src={dogResult && dogResult.message} />
+        )}
         <p>
           X:{positions.x}, Y: {positions.y}
         </p>
