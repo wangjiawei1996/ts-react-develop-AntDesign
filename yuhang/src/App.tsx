@@ -9,7 +9,13 @@ function App() {
         <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
           World
         </Button>
+        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
+          Yuhang
+        </Button>
         <Button btnType={ButtonType.Link} href="http://www.baidu.com">
+          link baidu
+        </Button>
+        <Button btnType={ButtonType.Link} href="http://www.baidu.com" disabled>
           link baidu
         </Button>
         <p>
