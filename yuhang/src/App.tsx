@@ -1,5 +1,6 @@
 import React from "react";
 import Button, { ButtonSize, ButtonType } from "./components/Button/button";
+import Alert, { AlertType } from "./components/Alert/alert";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Button btnType={ButtonType.Link} href="http://www.baidu.com" disabled>
           link baidu
         </Button>
+        <Alert message={123}></Alert>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
