@@ -1,11 +1,18 @@
 {
   "name": "learntypescript",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node ./enum.ts"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^8.10.2"
+  },
+  "dependencies": {
+    "typescript": "^3.9.7"
+  }
 }
