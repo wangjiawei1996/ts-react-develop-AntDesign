@@ -1,6 +1,15 @@
 "use strict";
-var Home;
-(function (Home) {
+var Component;
+(function (Component) {
+    var SubComponents;
+    (function (SubComponents) {
+        var Test = /** @class */ (function () {
+            function Test() {
+            }
+            return Test;
+        }());
+        SubComponents.Test = Test;
+    })(SubComponents = Component.SubComponents || (Component.SubComponents = {}));
     var Headeer = /** @class */ (function () {
         function Headeer() {
             var elem = document.createElement('div');
@@ -9,6 +18,7 @@ var Home;
         }
         return Headeer;
     }());
+    Component.Headeer = Headeer;
     var Footer = /** @class */ (function () {
         function Footer() {
             var elem = document.createElement('div');
@@ -17,10 +27,18 @@ var Home;
         }
         return Footer;
     }());
+    Component.Footer = Footer;
+})(Component || (Component = {}));
+///<reference path='./components.ts' />
+var Home;
+(function (Home) {
     var Page = /** @class */ (function () {
         function Page() {
-            new Headeer();
-            new Footer();
+            this.user = {
+                name: 'jiawei',
+            };
+            new Component.Headeer();
+            new Component.Footer();
         }
         return Page;
     }());

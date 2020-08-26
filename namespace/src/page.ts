@@ -1,22 +1,12 @@
+///<reference path='./components.ts' />
 namespace Home {
-  class Headeer {
-    constructor() {
-      const elem = document.createElement('div');
-      elem.innerText = 'header';
-      document.body.appendChild(elem);
-    }
-  }
-  class Footer {
-    constructor() {
-      const elem = document.createElement('div');
-      elem.innerText = 'footer';
-      document.body.appendChild(elem);
-    }
-  }
   export class Page {
+    user: Component.User = {
+      name: 'jiawei',
+    };
     constructor() {
-      new Headeer();
-      new Footer();
+      new Component.Headeer();
+      new Component.Footer();
     }
   }
 }
