@@ -1,15 +1,7 @@
-"use strict";
-var Component;
-(function (Component) {
-    var SubComponents;
-    (function (SubComponents) {
-        var Test = /** @class */ (function () {
-            function Test() {
-            }
-            return Test;
-        }());
-        SubComponents.Test = Test;
-    })(SubComponents = Component.SubComponents || (Component.SubComponents = {}));
+define("components", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Footer = exports.Headeer = void 0;
     var Headeer = /** @class */ (function () {
         function Headeer() {
             var elem = document.createElement('div');
@@ -18,7 +10,7 @@ var Component;
         }
         return Headeer;
     }());
-    Component.Headeer = Headeer;
+    exports.Headeer = Headeer;
     var Footer = /** @class */ (function () {
         function Footer() {
             var elem = document.createElement('div');
@@ -27,20 +19,18 @@ var Component;
         }
         return Footer;
     }());
-    Component.Footer = Footer;
-})(Component || (Component = {}));
-///<reference path='./components.ts' />
-var Home;
-(function (Home) {
+    exports.Footer = Footer;
+});
+define("page", ["require", "exports", "components"], function (require, exports, components_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Page = void 0;
     var Page = /** @class */ (function () {
         function Page() {
-            this.user = {
-                name: 'jiawei',
-            };
-            new Component.Headeer();
-            new Component.Footer();
+            new components_1.Headeer();
+            new components_1.Footer();
         }
         return Page;
     }());
-    Home.Page = Page;
-})(Home || (Home = {}));
+    exports.Page = Page;
+});

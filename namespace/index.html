@@ -9,7 +9,9 @@
 <body>
   <script src="./dist/page.js"></script>
   <script>
-    new Home.Page()
+    require(['page'], (page) => {
+      new page.default()
+    })
   </script>
 </body>
 

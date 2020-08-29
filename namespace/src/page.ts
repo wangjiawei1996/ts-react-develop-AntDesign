@@ -1,12 +1,7 @@
-///<reference path='./components.ts' />
-namespace Home {
-  export class Page {
-    user: Component.User = {
-      name: 'jiawei',
-    };
-    constructor() {
-      new Component.Headeer();
-      new Component.Footer();
-    }
+import { Headeer, Footer } from './components';
+export default class Page {
+  constructor() {
+    new Headeer();
+    new Footer();
   }
 }
