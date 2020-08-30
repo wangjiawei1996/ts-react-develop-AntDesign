@@ -1,2 +1,3 @@
-const teacher: string = 'Jiawei';
-console.log(teacher);
+$(function () {
+  $('body').html('<div>123</div');
+});
