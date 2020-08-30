@@ -1,0 +1,19 @@
+{
+  "name": "parcelcomponent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "tnpm": "^1.0.5"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "test": "parcel ./src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
