@@ -3,13 +3,26 @@ import Crowller from './crowller';
 import DellAnalyzer from './dellAnalyzer';
 const router = Router();
 router.get('/', (req: Request, res: Response) => {
-  res.send('hello world');
+  res.send(`
+    <html>
+      <body>
+        <form method="post" action="/get">
+          <input type="password" name="password" />
+          <button>提交</button>
+        </form>
+      </body>
+    </html>
+  `);
 });
-router.get('/get', (req: Request, res: Response) => {
-  const secret = 'secretKey';
-  const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secret}`;
-  const analyzer = DellAnalyzer.getInstance();
-  new Crowller(url, analyzer);
-  res.send('bye world');
+router.post('/get', (req: Request, res: Response) => {
+  if (req.body.password === '123') {
+    const secret = 'secretKey';
+    const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secret}`;
+    const analyzer = DellAnalyzer.getInstance();
+    new Crowller(url, analyzer);
+    res.send('bye world');
+  } else {
+    res.send('password Error');
+  }
 });
 export default router;
