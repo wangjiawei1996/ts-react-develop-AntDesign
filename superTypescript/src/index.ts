@@ -4,16 +4,13 @@
 //   };
 //   return descriptor;
 // }
-function nameDecorator(target: any, key: string): any {
-  // const descriptor: PropertyDescriptor = {
-  //   writable: false,
-  // };
-  // return descriptor;
-  target[key] = 'lee';
+function paramDecorator(target: any, method: string, paramIndex: number): any {
+  console.log(target, method, paramIndex);
 }
 class Test {
-  @nameDecorator
-  name = 'dell';
+  getInfo(@paramDecorator name: string, age: number) {
+    console.log(name, age);
+  }
 }
 const test = new Test();
-console.log(test.name);
+test.getInfo('dell', 24);
