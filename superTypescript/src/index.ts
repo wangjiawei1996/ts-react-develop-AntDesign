@@ -1,16 +1,24 @@
-// function nameDecorator(target: any, key: string): any {
-//   const descriptor: PropertyDescriptor = {
-//     writable: false,
-//   };
-//   return descriptor;
-// }
-function paramDecorator(target: any, method: string, paramIndex: number): any {
-  console.log(target, method, paramIndex);
+const userInfo: any = undefined;
+
+function catchError(msg: string) {
+  return function (target: any, key: string, descriptor: PropertyDescriptor) {
+    const fn = descriptor.value;
+    descriptor.value = function () {
+      try {
+        fn();
+      } catch {
+        console.log(msg);
+      }
+    };
+  };
 }
 class Test {
-  getInfo(@paramDecorator name: string, age: number) {
-    console.log(name, age);
+  @catchError('userInfo.name不存在')
+  getInfo() {
+    return userInfo.name;
+  }
+  @catchError('userInfo.age不存在')
+  getAge() {
+    return userInfo.age;
   }
 }
-const test = new Test();
-test.getInfo('dell', 24);
